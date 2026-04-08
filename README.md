@@ -31,6 +31,14 @@ Each pattern is contained within its own dedicated directory to ensure a clean *
 -   **Why use it?**: It achieves **Inversion of Control**. The `DataFetcher` handles the "How" (fetching, loading), while the consumer handles the "What" (the specific UI).
 -   **Key Implementation**: Uses the `children` prop as a function to inject `data`, `loading`, and `error` states.
 
+### 4. Higher-Order Component (HOC)
+
+**Directory:** `/src/components/HOCPattern/`
+
+-   **Demo File**: `HOC.tsx`
+-   **Intent**: Enhance components with cross-cutting concerns (like logging) by wrapping them in a decorator function.
+-   **Key Concept**: `EnhancedComponent = withLogger(BaseComponent)`.
+
 ---
 
 ## 📖 Key Principles

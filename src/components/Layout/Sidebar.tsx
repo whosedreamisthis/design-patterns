@@ -9,6 +9,7 @@ import {
 const patterns = [
 	{ id: 'compound', label: 'Compound Pattern', icon: Box },
 	{ id: 'render-props', label: 'Render Props', icon: MousePointer2 },
+	{ id: 'hoc', label: 'HOC Pattern', icon: GraduationCap },
 ];
 
 export function Sidebar({ activePattern, onSelect }) {

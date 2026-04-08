@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Sidebar } from './components/Layout/Sidebar';
 import { Compound } from './components/CompoundPattern/Compound';
 import { RenderProps } from './components/RenderPropsPattern/RenderProps';
-
+import { HOC } from './components/HOCPattern/HOC';
 function App() {
 	const [activePattern, setActivePattern] = useState('compound');
 
@@ -20,6 +20,7 @@ function App() {
 				<div className="max-w-4xl mx-auto">
 					{activePattern === 'compound' && <Compound />}
 					{activePattern === 'render-props' && <RenderProps />}
+					{activePattern === 'hoc' && <HOC />}
 				</div>
 			</main>
 		</div>
