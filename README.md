@@ -1,73 +1,52 @@
-# React + TypeScript + Vite
+# React Design Patterns Lab
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A living laboratory of modern React design patterns, implemented with **TypeScript**, **Tailwind CSS**, and **Lucide React**.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Implemented Patterns
 
-## React Compiler
+### 1. Compound Component Pattern
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+**File:** `/src/components/Compound.tsx`  
+**Purpose:** Flexible UI Layout and Implicit State Management.
 
-## Expanding the ESLint configuration
+-   **Description**: Allows a set of related components to share state implicitly while giving the user full control over the DOM structure.
+-   **Key Concepts**:
+    -   **Context API**: Used to share `activeTab` state without prop drilling.
+    -   **Open-Closed Principle**: The component is open for visual extension (adding icons, badges) but closed for internal logic modification.
+    -   **API Surface Area**: Extremely small; the user only interacts with a few semantic components rather than a massive configuration object.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### 2. Render Props Pattern
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+**File:** `/src/components/MouseTracker.tsx`  
+**Purpose:** Logic Reuse and Decoupling UI from Behavior.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+-   **Description**: A technique for sharing code between React components using a prop whose value is a function.
+-   **Key Concepts**:
+    -   **Inversion of Control**: The parent component handles the "How" (tracking mouse logic), while the consumer handles the "What" (rendering an icon, text, or coordinates).
+    -   **Dynamic Rendering**: Allows the same logic to drive completely different UI representations without duplicating the underlying state management.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🛠️ Tech Stack
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+-   **React 19**
+-   **TypeScript** (Type safety for Context and Props)
+-   **Tailwind CSS** (Utility-first styling)
+-   **Lucide React** (Iconography)
+-   **Vite** (Fast Refresh & HMR)
+
+---
+
+## 📖 Glossary of Principles
+
+-   **Open-Closed Principle (OCP)**: Software entities should be open for extension, but closed for modification.
+-   **API Surface Area**: The total number of points (props/methods) through which a developer interacts with a component. Smaller is usually better for maintenance.
+-   **HMR (Hot Module Replacement)**: Vite's ability to swap modules without a full page reload.
+
+---
+
+_Keep adding to this as we explore more patterns!_
