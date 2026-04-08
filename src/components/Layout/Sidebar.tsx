@@ -1,11 +1,18 @@
 // src/components/Layout/Sidebar.tsx
-import { Anchor, MousePointer2, Box, GraduationCap } from 'lucide-react';
+import {
+	Anchor,
+	MousePointer2,
+	Box,
+	GraduationCap,
+	Pencil,
+} from 'lucide-react';
 
 const patterns = [
 	{ id: 'compound', label: 'Compound Pattern', icon: Box },
 	{ id: 'render-props', label: 'Render Props', icon: MousePointer2 },
 	{ id: 'hoc', label: 'HOC Pattern', icon: GraduationCap },
 	{ id: 'hooks', label: 'Custom Hooks', icon: Anchor },
+	{ id: 'forms', label: 'Form Patterns', icon: Pencil },
 ];
 
 interface SidebarProps {

@@ -5,6 +5,7 @@ import { Compound } from './components/CompoundPattern/Compound';
 import { RenderProps } from './components/RenderPropsPattern/RenderProps';
 import { HOC } from './components/HOCPattern/HOC';
 import { Hooks } from './components/HooksPattern/Hooks';
+import { Forms } from './components/FormPattern/Forms';
 
 function App() {
 	const [activePattern, setActivePattern] = useState('compound');
@@ -24,6 +25,7 @@ function App() {
 					{activePattern === 'render-props' && <RenderProps />}
 					{activePattern === 'hoc' && <HOC />}
 					{activePattern === 'hooks' && <Hooks />}
+					{activePattern === 'forms' && <Forms />}
 				</div>
 			</main>
 		</div>

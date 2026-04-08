@@ -54,6 +54,13 @@ The project is structured as a **Documentation Shell**.
 -   **Intent**: Extract and reuse stateful logic without changing component hierarchy.
 -   **Key Concept**: Logic is flat and accessible via simple function calls within the component body.
 
+### 6. Controlled vs. Uncontrolled Components
+
+**Directory:** `/src/components/FormPattern/`
+
+-   **Intent**: Deciding where the form data lives (React State vs. DOM).
+-   **Key Concept**: `useState` for real-time reactivity, `useRef` for performance and "pulling" data on demand.
+
 ---
 
 ## 🛠️ Tech Stack
