@@ -46,3 +46,46 @@ describe('Compound Pattern Safety', () => {
 		consoleSpy.mockRestore();
 	});
 });
+
+describe('Compound Pattern: Accessibility', () => {
+	it('should apply active styling to the default tab', () => {
+		render(
+			<TabsProvider defaultValue="home">
+				<Tab value="home">Home</Tab>
+				<Tab value="settings">Settings</Tab>
+			</TabsProvider>,
+		);
+
+		const homeTab = screen.getByRole('button', { name: /home/i });
+		const settingsTab = screen.getByRole('button', { name: /settings/i });
+
+		// Based on your Tab.tsx: isActive applies 'border-blue-500 text-blue-600'
+		expect(homeTab).toHaveClass('border-blue-500');
+		expect(homeTab).toHaveClass('text-blue-600');
+
+		// Settings should have the inactive classes
+		expect(settingsTab).toHaveClass('border-transparent');
+		expect(settingsTab).toHaveClass('text-gray-500');
+	});
+});
+
+describe('Compound Pattern: Composition', () => {
+	it('should work even when children are nested in other elements', () => {
+		render(
+			<TabsProvider defaultValue="home">
+				<header className="custom-wrapper">
+					<Tab value="home">Home</Tab>
+				</header>
+				<main>
+					<section>
+						<TabPanel value="home">Deeply Nested Content</TabPanel>
+					</section>
+				</main>
+			</TabsProvider>,
+		);
+
+		// This proves the Context API is doing the heavy lifting
+		// rather than relying on direct parent-child relationships.
+		expect(screen.getByText('Deeply Nested Content')).toBeInTheDocument();
+	});
+});
