@@ -1,8 +1,8 @@
-import { ComponentType, useEffect } from 'react';
+import React, { useEffect } from 'react';
 
 // This function takes a Component and returns a new Component
 export function withLogger<T extends object>(
-	WrappedComponent: ComponentType<T>,
+	WrappedComponent: React.ComponentType<T>,
 ) {
 	return (props: T) => {
 		useEffect(() => {

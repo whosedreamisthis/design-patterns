@@ -1,4 +1,4 @@
-import { useState, useEffect, ReactNode } from 'react';
+import React, { useState, useEffect } from 'react';
 
 // Define the shape of the state we share with the UI
 interface FetchState<T> {
@@ -10,7 +10,7 @@ interface FetchState<T> {
 interface FetcherProps<T> {
 	url: string;
 	// This is the "Render Prop" function
-	children: (state: FetchState<T>) => ReactNode;
+	children: (state: FetchState<T>) => React.ReactNode;
 }
 
 export function DataFetcher<T>({ url, children }: FetcherProps<T>) {

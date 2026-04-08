@@ -1,4 +1,3 @@
-import React from 'react';
 import { LoggedButton, LoggedCard } from './HOCExamples';
 
 export function HOC() {

@@ -1,9 +1,9 @@
-import { ReactNode } from 'react';
+import React from 'react';
 import { useTabs } from './TabsContext';
 
 interface TabProps {
 	value: string;
-	children: ReactNode;
+	children: React.ReactNode;
 }
 
 export function Tab({ value, children }: TabProps) {
