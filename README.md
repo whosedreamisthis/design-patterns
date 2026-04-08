@@ -1,35 +1,35 @@
-# React Design Patterns Lab
+# 🧪 React Pattern Lab
 
-A modular collection of React design patterns implemented with **TypeScript**, **Tailwind CSS**, and **Lucide React**.
+A modular exploration of React design patterns, architected for **Type Safety**, **Logic Reuse**, and **Fast Refresh** (HMR) compatibility.
 
 ---
 
-## 📂 Project Structure
-
-Each pattern is contained within its own dedicated directory to ensure a clean **Separation of Concerns** and maintain **Fast Refresh** compatibility.
+## 🏗️ Core Architecture
+The project is structured as a **Documentation Shell**.
+* **Sidebar Navigation**: Centralized control for pattern switching.
+* **Modular Folders**: Each pattern is self-contained with its own logic, types, and UI.
+* **Inversion of Control**: Heavy focus on patterns that separate *how it works* from *how it looks*.
 
 ---
 
 ## 🚀 Implemented Patterns
 
-### 1. CompoundPattern
+### 1. CompoundPattern (Layout & Composition)
+**Directory:** `/src/components/CompoundPattern/`
+* **Intent**: Manage complex UI state (like Tabs or Accordions) implicitly.
+* **Key Files**: `TabsProvider.tsx`, `TabsContext.tsx`, `Tab.tsx`.
+* **Concept**: Uses the **Context API** to share state between a parent and its children without "Prop Drilling."
 
-**Directory:** `src/components/CompoundPattern/`
+### 2. RenderPropsPattern (Logic Injection)
+**Directory:** `/src/components/RenderPropsPattern/`
+* **Intent**: Share reusable logic (like Data Fetching) while delegating UI rendering to the consumer.
+* **Key Files**: `DataFetcher.tsx`.
+* **Concept**: Uses a **Function as a Child** to "inject" internal state into a custom UI template provided by the parent.
 
--   **Purpose**: Flexible UI layout and implicit state management.
--   **Why use it?**: It follows the **Open-Closed Principle**. You can change the UI (add icons, move tab positions) without touching the core logic.
--   **Files**:
-    -   `TabsContext.tsx`: Manages shared state via React Context.
-    -   `TabsProvider.tsx`: The orchestrator providing the state.
-    -   `Tab.tsx`: The UI atoms consuming the state.
-
-### 2. RenderPropsPattern
-
-**Directory:** `src/components/RenderPropsPattern/`
-
--   **Purpose**: Sharing logic between components using a function prop.
--   **Why use it?**: It achieves **Inversion of Control**. The `DataFetcher` handles the "How" (fetching, loading), while the consumer handles the "What" (the specific UI).
--   **Key Implementation**: Uses the `children` prop as a function to inject `data`, `loading`, and `error` states.
+### 3. Layout Pattern (App Shell)
+**Directory:** `/src/components/Layout/`
+* **Intent**: Decouple the application's navigation and global structure from the content.
+* **Concept**: Uses state-driven conditional rendering to switch between different high-level modules.
 
 ### 4. Higher-Order Component (HOC)
 
@@ -41,10 +41,13 @@ Each pattern is contained within its own dedicated directory to ensure a clean *
 
 ---
 
-## 📖 Key Principles
-
--   **API Surface Area**: Focused, minimal props for better maintainability.
--   **Separation of Logic & View**: Logic stays in Providers; UI stays in pure components.
--   **HMR Compliance**: Context and Types are separated from Component files to prevent full page reloads.
+## 🛠️ Tech Stack
+* **React 19** & **Vite**
+* **TypeScript** (Generics & Context Types)
+* **Tailwind CSS** (Utility-first styling)
+* **Lucide React** (Iconography)
 
 ---
+
+## 💡 Why this structure?
+By keeping **Context** and **Logic** in separate files from the **UI Components**, we ensure that Vite's **Hot Module Replacement (HMR)** works perfectly. Changing a style won't reset your application state!
