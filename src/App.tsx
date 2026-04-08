@@ -14,7 +14,6 @@ function App() {
 
 	return (
 		<div className="flex min-h-screen bg-slate-50">
-			{/* Sidebar - Fixed on the left */}
 			<Sidebar
 				activePattern={activePattern}
 				onSelect={setActivePattern}
@@ -22,28 +21,43 @@ function App() {
 				onClose={() => setIsSidebarOpen(false)}
 			/>
 
-			{/* Main Content Area - Margined to the right of the sidebar */}
-			<main className="flex-1 lg:ml-64 p-6 lg:p-12">
-				{/* Mobile Header */}
-				<div className="flex items-center gap-4 mb-8 lg:hidden">
-					<button
-						onClick={() => setIsSidebarOpen(true)}
-						className="p-2 bg-slate-900 text-white rounded-md shadow-md shrink-0"
-					>
-						<Menu size={24} />
-					</button>
-					{/* Added truncate and min-w-0 to prevent pushing off screen */}
-					<h1 className="text-xl font-bold text-slate-900">
-						Pattern Lab
-					</h1>
+			<main className="flex-1 lg:ml-64 min-w-0 flex flex-col">
+				{/* FIXED HEADER: This always has padding so the menu/title look consistent */}
+				<div className="p-6 lg:p-12 pb-0 lg:pb-0">
+					<div className="flex items-center justify-between gap-4 mb-8 lg:hidden">
+						<button
+							onClick={() => setIsSidebarOpen(true)}
+							className="p-2 bg-slate-900 text-white rounded-md shadow-md shrink-0"
+						>
+							<Menu size={24} />
+						</button>
+						<h1 className="text-xl font-bold text-slate-900">
+							Pattern Lab
+						</h1>
+					</div>
 				</div>
 
-				<div className="max-w-4xl mx-auto w-full">
-					{activePattern === 'compound' && <Compound />}
-					{activePattern === 'render-props' && <RenderProps />}
-					{activePattern === 'hoc' && <HOC />}
-					{activePattern === 'hooks' && <Hooks />}
-					{activePattern === 'forms' && <Forms />}
+				{/* DYNAMIC CONTENT AREA: Padding is now applied conditionally here */}
+				<div
+					className={`flex-1 w-full mx-auto ${
+						activePattern === 'compound'
+							? 'p-0' // No padding for compound so tabs can hit the edge
+							: 'p-6 lg:p-12 pt-0 lg:pt-0' // Standard padding for everything else
+					}`}
+				>
+					<div
+						className={
+							activePattern === 'compound'
+								? ''
+								: 'max-w-4xl mx-auto'
+						}
+					>
+						{activePattern === 'compound' && <Compound />}
+						{activePattern === 'render-props' && <RenderProps />}
+						{activePattern === 'hoc' && <HOC />}
+						{activePattern === 'hooks' && <Hooks />}
+						{activePattern === 'forms' && <Forms />}
+					</div>
 				</div>
 			</main>
 		</div>
