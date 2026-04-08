@@ -4,6 +4,8 @@ import { Sidebar } from './components/Layout/Sidebar';
 import { Compound } from './components/CompoundPattern/Compound';
 import { RenderProps } from './components/RenderPropsPattern/RenderProps';
 import { HOC } from './components/HOCPattern/HOC';
+import { Hooks } from './components/HooksPattern/Hooks';
+
 function App() {
 	const [activePattern, setActivePattern] = useState('compound');
 
@@ -21,6 +23,7 @@ function App() {
 					{activePattern === 'compound' && <Compound />}
 					{activePattern === 'render-props' && <RenderProps />}
 					{activePattern === 'hoc' && <HOC />}
+					{activePattern === 'hooks' && <Hooks />}
 				</div>
 			</main>
 		</div>

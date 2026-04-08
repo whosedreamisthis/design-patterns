@@ -1,18 +1,19 @@
 // src/components/Layout/Sidebar.tsx
-import {
-	LayoutPanelLeft,
-	MousePointer2,
-	Box,
-	GraduationCap,
-} from 'lucide-react';
+import { Anchor, MousePointer2, Box, GraduationCap } from 'lucide-react';
 
 const patterns = [
 	{ id: 'compound', label: 'Compound Pattern', icon: Box },
 	{ id: 'render-props', label: 'Render Props', icon: MousePointer2 },
 	{ id: 'hoc', label: 'HOC Pattern', icon: GraduationCap },
+	{ id: 'hooks', label: 'Custom Hooks', icon: Anchor },
 ];
 
-export function Sidebar({ activePattern, onSelect }) {
+interface SidebarProps {
+	activePattern: string;
+	onSelect: (id: string) => void; // This says: "A function that takes a string and returns nothing"
+}
+
+export function Sidebar({ activePattern, onSelect }: SidebarProps) {
 	return (
 		<aside className="w-64 h-screen bg-slate-900 text-slate-300 flex flex-col fixed left-0 top-0">
 			<div className="p-6 border-b border-slate-800 flex items-center gap-3 text-white">
