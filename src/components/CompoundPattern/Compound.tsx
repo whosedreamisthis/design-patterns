@@ -1,5 +1,5 @@
-import { TabsProvider } from './Tabs/TabsProvider';
-import { Tab, TabPanel } from './Tabs/Tab';
+import { TabsProvider } from './TabsProvider';
+import { Tab, TabPanel } from './Tab';
 import { Home, Settings, User } from 'lucide-react';
 
 export function Compound() {

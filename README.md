@@ -1,52 +1,42 @@
 # React Design Patterns Lab
 
-A living laboratory of modern React design patterns, implemented with **TypeScript**, **Tailwind CSS**, and **Lucide React**.
+A modular collection of React design patterns implemented with **TypeScript**, **Tailwind CSS**, and **Lucide React**.
+
+---
+
+## 📂 Project Structure
+
+Each pattern is contained within its own dedicated directory to ensure a clean **Separation of Concerns** and maintain **Fast Refresh** compatibility.
 
 ---
 
 ## 🚀 Implemented Patterns
 
-### 1. Compound Component Pattern
+### 1. CompoundPattern
 
-**File:** `/src/components/Compound.tsx`  
-**Purpose:** Flexible UI Layout and Implicit State Management.
+**Directory:** `src/components/CompoundPattern/`
 
--   **Description**: Allows a set of related components to share state implicitly while giving the user full control over the DOM structure.
--   **Key Concepts**:
-    -   **Context API**: Used to share `activeTab` state without prop drilling.
-    -   **Open-Closed Principle**: The component is open for visual extension (adding icons, badges) but closed for internal logic modification.
-    -   **API Surface Area**: Extremely small; the user only interacts with a few semantic components rather than a massive configuration object.
+-   **Purpose**: Flexible UI layout and implicit state management.
+-   **Why use it?**: It follows the **Open-Closed Principle**. You can change the UI (add icons, move tab positions) without touching the core logic.
+-   **Files**:
+    -   `TabsContext.tsx`: Manages shared state via React Context.
+    -   `TabsProvider.tsx`: The orchestrator providing the state.
+    -   `Tab.tsx`: The UI atoms consuming the state.
 
----
+### 2. RenderPropsPattern
 
-### 2. Render Props Pattern
+**Directory:** `src/components/RenderPropsPattern/`
 
-**File:** `/src/components/MouseTracker.tsx`  
-**Purpose:** Logic Reuse and Decoupling UI from Behavior.
-
--   **Description**: A technique for sharing code between React components using a prop whose value is a function.
--   **Key Concepts**:
-    -   **Inversion of Control**: The parent component handles the "How" (tracking mouse logic), while the consumer handles the "What" (rendering an icon, text, or coordinates).
-    -   **Dynamic Rendering**: Allows the same logic to drive completely different UI representations without duplicating the underlying state management.
+-   **Purpose**: Sharing logic between components using a function prop.
+-   **Why use it?**: It achieves **Inversion of Control**. The `DataFetcher` handles the "How" (fetching, loading), while the consumer handles the "What" (the specific UI).
+-   **Key Implementation**: Uses the `children` prop as a function to inject `data`, `loading`, and `error` states.
 
 ---
 
-## 🛠️ Tech Stack
+## 📖 Key Principles
 
--   **React 19**
--   **TypeScript** (Type safety for Context and Props)
--   **Tailwind CSS** (Utility-first styling)
--   **Lucide React** (Iconography)
--   **Vite** (Fast Refresh & HMR)
+-   **API Surface Area**: Focused, minimal props for better maintainability.
+-   **Separation of Logic & View**: Logic stays in Providers; UI stays in pure components.
+-   **HMR Compliance**: Context and Types are separated from Component files to prevent full page reloads.
 
 ---
-
-## 📖 Glossary of Principles
-
--   **Open-Closed Principle (OCP)**: Software entities should be open for extension, but closed for modification.
--   **API Surface Area**: The total number of points (props/methods) through which a developer interacts with a component. Smaller is usually better for maintenance.
--   **HMR (Hot Module Replacement)**: Vite's ability to swap modules without a full page reload.
-
----
-
-_Keep adding to this as we explore more patterns!_

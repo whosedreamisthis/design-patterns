@@ -1,4 +1,4 @@
-import { Compound } from './components/Compound';
+import { Compound } from './components/CompoundPattern/Compound';
 import './App.css';
 
 function App() {
