@@ -1,14 +1,28 @@
+// src/App.tsx
+import { useState } from 'react';
+import { Sidebar } from './components/Layout/Sidebar';
 import { Compound } from './components/CompoundPattern/Compound';
 import { RenderProps } from './components/RenderPropsPattern/RenderProps';
-import './App.css';
 
 function App() {
+	const [activePattern, setActivePattern] = useState('compound');
+
 	return (
-		<>
-			<Compound />
-			<hr className="my-12 border-gray-200" />
-			<RenderProps />
-		</>
+		<div className="flex min-h-screen bg-slate-50">
+			{/* Sidebar - Fixed on the left */}
+			<Sidebar
+				activePattern={activePattern}
+				onSelect={setActivePattern}
+			/>
+
+			{/* Main Content Area - Margined to the right of the sidebar */}
+			<main className="flex-1 ml-64 p-12">
+				<div className="max-w-4xl mx-auto">
+					{activePattern === 'compound' && <Compound />}
+					{activePattern === 'render-props' && <RenderProps />}
+				</div>
+			</main>
+		</div>
 	);
 }
 
