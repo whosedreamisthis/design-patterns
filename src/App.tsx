@@ -1,4 +1,4 @@
-import { Compound } from './components/Tabs2/Compound';
+import { Compound } from './components/Compound';
 import './App.css';
 
 function App() {
