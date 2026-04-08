@@ -75,3 +75,17 @@ The project is structured as a **Documentation Shell**.
 ## 💡 Why this structure?
 
 By keeping **Context** and **Logic** in separate files from the **UI Components**, we ensure that Vite's **Hot Module Replacement (HMR)** works perfectly. Changing a style won't reset your application state!
+
+---
+
+## 🧪 Testing
+
+The project uses **Vitest** and **React Testing Library** to ensure architectural integrity.
+
+```bash
+# Run tests in watch mode
+npm test
+
+# View interactive test UI
+npm run test:ui
+```
