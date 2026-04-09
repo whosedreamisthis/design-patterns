@@ -30,7 +30,7 @@ export function Sidebar({
 		{ id: 'forms', label: 'Form Pattern', icon: Pencil },
 		{
 			id: 'container-presentation',
-			label: 'Container/Presentation Pattern',
+			label: 'Container/Presentation',
 			icon: User,
 		},
 	];
