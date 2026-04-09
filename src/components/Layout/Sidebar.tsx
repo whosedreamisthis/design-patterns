@@ -5,6 +5,7 @@ import {
 	Anchor,
 	Pencil,
 	LayoutDashboard,
+	User,
 	X, // Import X to close the menu
 } from 'lucide-react';
 
@@ -26,7 +27,12 @@ export function Sidebar({
 		{ id: 'render-props', label: 'Render Props', icon: MousePointer2 },
 		{ id: 'hoc', label: 'HOC Pattern', icon: GraduationCap },
 		{ id: 'hooks', label: 'Custom Hooks', icon: Anchor },
-		{ id: 'forms', label: 'Form Patterns', icon: Pencil },
+		{ id: 'forms', label: 'Form Pattern', icon: Pencil },
+		{
+			id: 'container-presentation',
+			label: 'Container/Presentation Pattern',
+			icon: User,
+		},
 	];
 
 	return (

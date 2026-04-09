@@ -7,6 +7,7 @@ import { RenderProps } from './components/RenderPropsPattern/RenderProps';
 import { HOC } from './components/HOCPattern/HOC';
 import { Hooks } from './components/HooksPattern/Hooks';
 import { Forms } from './components/FormPattern/Forms';
+import { UserListContainer } from './components/ContainerPresentationPattern/UserListContainer';
 
 function App() {
 	const [activePattern, setActivePattern] = useState('compound');
@@ -57,6 +58,9 @@ function App() {
 						{activePattern === 'hoc' && <HOC />}
 						{activePattern === 'hooks' && <Hooks />}
 						{activePattern === 'forms' && <Forms />}
+						{activePattern === 'container-presentation' && (
+							<UserListContainer />
+						)}
 					</div>
 				</div>
 			</main>
