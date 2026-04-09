@@ -7,6 +7,7 @@ import {
 	LayoutDashboard,
 	User,
 	Sun,
+	Radio,
 	X, // Import X to close the menu
 } from 'lucide-react';
 
@@ -35,6 +36,7 @@ export function Sidebar({
 			icon: User,
 		},
 		{ id: 'theme', label: 'Provider Pattern', icon: Sun },
+		{ id: 'observer', label: 'Observer Pattern', icon: Radio },
 	];
 
 	return (

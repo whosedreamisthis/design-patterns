@@ -10,6 +10,8 @@ import { Forms } from './components/FormPattern/Forms';
 import { UserListContainer } from './components/ContainerPresentationPattern/UserListContainer';
 import { ThemePage } from './components/Provider/ThemePage';
 import { ThemeProvider } from './components/Provider/ThemeContext';
+import { NotifyButton } from './components/ObserverPattern/NotifyButton';
+import { ToastContainer } from './components/ObserverPattern/ToastContainer';
 function App() {
 	const [activePattern, setActivePattern] = useState('compound');
 	const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -66,6 +68,8 @@ function App() {
 								<UserListContainer />
 							)}
 							{activePattern === 'theme' && <ThemePage />}
+							{activePattern === 'observer' && <NotifyButton />}
+							<ToastContainer />
 						</div>
 					</div>
 				</main>
