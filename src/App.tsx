@@ -14,7 +14,7 @@ import { NotifyButton } from './components/ObserverPattern/NotifyButton';
 import { ToastContainer } from './components/ObserverPattern/ToastContainer';
 function App() {
 	const [activePattern, setActivePattern] = useState('compound');
-	const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+	const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
 	return (
 		<ThemeProvider>
@@ -27,7 +27,6 @@ function App() {
 				/>
 
 				<main className="flex-1 lg:ml-64 min-w-0 flex flex-col">
-					{/* FIXED HEADER: This always has padding so the menu/title look consistent */}
 					<div className="p-6 lg:p-12 pb-0 lg:pb-0">
 						<div className="flex items-center justify-between gap-4 mb-8 lg:hidden">
 							<button
