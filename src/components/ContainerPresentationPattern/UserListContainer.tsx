@@ -15,5 +15,12 @@ export const UserListContainer = () => {
 			});
 	}, []);
 
-	return <UserList users={users} loading={loading} />;
+	return (
+		<div>
+			<h2 className="text-xl font-bold mb-4 mx-auto w-full">
+				Provider Pattern
+			</h2>
+			<UserList users={users} loading={loading} />
+		</div>
+	);
 };

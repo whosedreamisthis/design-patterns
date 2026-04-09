@@ -8,13 +8,9 @@ export function ThemePage() {
 		// 1. The Provider wraps the section of the app that needs the theme
 		<div className="min-h-screen p-8 transition-colors duration-300">
 			<header className="flex flex-col justify-between items-center mb-10">
-				<h1
-					className={`text-3xl font-bold ${
-						theme === 'light' ? 'text-black' : 'text-white'
-					}`}
-				>
+				<h2 className="text-xl font-bold mb-4 mx-auto w-full">
 					Provider Pattern
-				</h1>
+				</h2>
 
 				{/* 2. The ToggleButton can live here in the header */}
 				<ThemeToggleButton />

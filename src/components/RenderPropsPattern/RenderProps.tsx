@@ -16,7 +16,7 @@ interface TodoData {
 
 export function RenderProps() {
 	return (
-		<div className="p-8 space-y-10 max-w-2xl mx-auto">
+		<div className="p-2 space-y-10 max-w-2xl mx-auto">
 			<header>
 				<h2 className="text-2xl font-bold text-gray-800">
 					Render Props Pattern

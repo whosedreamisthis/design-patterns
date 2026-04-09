@@ -21,13 +21,18 @@ export function Hooks() {
 	if (error) return <div className="text-red-500">Error: {error}</div>;
 
 	return (
-		<div className="p-6 border rounded-xl bg-white shadow-sm flex items-center gap-4">
-			<div className="bg-purple-100 p-3 rounded-full text-purple-600">
-				<User size={24} />
-			</div>
-			<div>
-				<h3 className="font-bold text-lg">{data?.name}</h3>
-				<p className="text-gray-500">{data?.email}</p>
+		<div>
+			<h2 className="text-xl font-bold mb-4 mx-auto w-full">
+				Custom Hook Pattern
+			</h2>
+			<div className="p-6 border rounded-xl bg-white shadow-sm flex items-center gap-4">
+				<div className="bg-purple-100 p-3 rounded-full text-purple-600">
+					<User size={24} />
+				</div>
+				<div>
+					<h3 className="font-bold text-lg">{data?.name}</h3>
+					<p className="text-gray-500">{data?.email}</p>
+				</div>
 			</div>
 		</div>
 	);
