@@ -13,6 +13,8 @@ import { ThemeProvider } from './components/Provider/ThemeContext';
 import { NotifyButton } from './components/ObserverPattern/NotifyButton';
 import { ToastContainer } from './components/ObserverPattern/ToastContainer';
 import { ProxyExample } from './components/ProxyPattern/ProxyExample';
+import { StrategyExample } from './components/StrategyPattern/StrategyExample';
+
 function App() {
 	const [activePattern, setActivePattern] = useState('compound');
 	const [isSidebarOpen, setIsSidebarOpen] = useState(true);
@@ -70,6 +72,10 @@ function App() {
 							{activePattern === 'theme' && <ThemePage />}
 							{activePattern === 'observer' && <NotifyButton />}
 							{activePattern === 'proxy' && <ProxyExample />}
+							{activePattern === 'strategy' && (
+								<StrategyExample />
+							)}
+
 							<ToastContainer />
 						</div>
 					</div>
