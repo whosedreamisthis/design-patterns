@@ -2,7 +2,17 @@
 type Listener = (message: string) => void;
 
 class NotificationManager {
+	private static instance: NotificationManager;
 	private listeners: Listener[] = [];
+
+	private constructor() {}
+
+	public static getInstance(): NotificationManager {
+		if (!NotificationManager.instance) {
+			NotificationManager.instance = new NotificationManager();
+		}
+		return NotificationManager.instance;
+	}
 
 	// Components use this to "Subscribe"
 	subscribe(fn: Listener) {
@@ -18,4 +28,4 @@ class NotificationManager {
 	}
 }
 
-export const toastManager = new NotificationManager();
+export const toastManager = NotificationManager.getInstance();
