@@ -12,6 +12,7 @@ import { ThemePage } from './components/Provider/ThemePage';
 import { ThemeProvider } from './components/Provider/ThemeContext';
 import { NotifyButton } from './components/ObserverPattern/NotifyButton';
 import { ToastContainer } from './components/ObserverPattern/ToastContainer';
+import { ProxyExample } from './components/ProxyPattern/ProxyExample';
 function App() {
 	const [activePattern, setActivePattern] = useState('compound');
 	const [isSidebarOpen, setIsSidebarOpen] = useState(true);
@@ -68,6 +69,7 @@ function App() {
 							)}
 							{activePattern === 'theme' && <ThemePage />}
 							{activePattern === 'observer' && <NotifyButton />}
+							{activePattern === 'proxy' && <ProxyExample />}
 							<ToastContainer />
 						</div>
 					</div>

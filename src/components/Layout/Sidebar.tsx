@@ -8,6 +8,7 @@ import {
 	User,
 	Sun,
 	Radio,
+	ShieldCheck,
 	X, // Import X to close the menu
 } from 'lucide-react';
 
@@ -37,6 +38,7 @@ export function Sidebar({
 		},
 		{ id: 'theme', label: 'Provider Pattern', icon: Sun },
 		{ id: 'observer', label: 'Observer Pattern', icon: Radio },
+		{ id: 'proxy', label: 'Proxy Pattern', icon: ShieldCheck },
 	];
 
 	return (
