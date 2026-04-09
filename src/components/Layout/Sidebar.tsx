@@ -6,6 +6,7 @@ import {
 	Pencil,
 	LayoutDashboard,
 	User,
+	Sun,
 	X, // Import X to close the menu
 } from 'lucide-react';
 
@@ -33,6 +34,7 @@ export function Sidebar({
 			label: 'Container/Presentation',
 			icon: User,
 		},
+		{ id: 'theme', label: 'Provider Pattern', icon: Sun },
 	];
 
 	return (
